@@ -1,13 +1,21 @@
 package com.med.androiddev.orders
 
-import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.med.androiddev.App
 import com.med.androiddev.R
 import com.med.androiddev.base.BaseFragment
 import com.med.androiddev.orders.di.component.DaggerOrdersComponent
 import com.med.domain.orders.model.Order
+import kotlinx.android.synthetic.main.fragment_orders.*
 
 class OrdersFragment : BaseFragment<OrdersPresenter>(), OrdersView {
+
+    // Yukleniyor simgesini gosterir veya gizler.
+
+    override fun showProgressBar(viewType: Int) {
+        if (orderProgressBar != null)
+            orderProgressBar.visibility = viewType
+    }
 
     // View'ın hangi layouttan oluşacağını belirler.
 
@@ -26,12 +34,19 @@ class OrdersFragment : BaseFragment<OrdersPresenter>(), OrdersView {
 
     override fun initialiseView() {
 
+        orderRecyclerView.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context)
+            adapter = OrdersAdapter(context!!, List(0) { null } as List<Order>)
+        }
     }
 
     // Siparişler isteği başarılı ise present tarafından siparişlerin listelenmesi için tetiklenir.
 
     override fun orderList(orders: List<Order>) {
-        Log.i("Orders", orders.toString())
+        if (orderRecyclerView != null) {
+            orderRecyclerView.adapter = OrdersAdapter(context!!, orders)
+        }
     }
 
 }

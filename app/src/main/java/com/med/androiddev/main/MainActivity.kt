@@ -4,6 +4,7 @@ import com.med.androiddev.App
 import com.med.androiddev.R
 import com.med.androiddev.base.BaseActivity
 import com.med.androiddev.main.di.component.DaggerMainComponent
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainPresenter>(), MainView {
 
@@ -11,6 +12,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
 
     override fun initialiseView() {
 
+        mainAppbar.isActivated = true
     }
 
     // View'ın hangi layouttan oluşacağını belirler.

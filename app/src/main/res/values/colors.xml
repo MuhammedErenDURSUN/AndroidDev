@@ -3,4 +3,9 @@
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#ED2A3A</color>
+    <color name="siparisHazirlaniyor">#FF8C01</color>
+    <color name="siparisYolda">#4DAE4F</color>
+    <color name="siparisOnayBeyliyor">#ED2938</color>
+    <color name="colorBlack">#4C4C4C</color>
+    <color name="colorGray">#E1E3E4</color>
 </resources>

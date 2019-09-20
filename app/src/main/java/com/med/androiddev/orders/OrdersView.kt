@@ -11,4 +11,8 @@ interface OrdersView {
     // Siparişler isteği başarılı ise present tarafından view güncellenmesi durumunda tetiklenir.
 
     fun orderList(orders: List<Order>)
+
+    // Siparişler isteğinden yanit beklenirken tetiklenir.
+
+    fun showProgressBar(viewType: Int)
 }
