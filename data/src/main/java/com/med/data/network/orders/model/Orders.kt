@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 // Siparis Modeli
-
 data class Order(
     @SerializedName("date")
     @Expose
@@ -31,7 +30,6 @@ data class Order(
 )
 
 // Ürün Detayı Modeli
-
 data class ProductDetail(
 
     @SerializedName("orderDetail")

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -86,12 +85,13 @@
 
     <TextView
         android:id="@+id/productStateText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/productStateIcon"
+        app:layout_constraintEnd_toEndOf="@+id/orderNameText"
         app:layout_constraintStart_toEndOf="@+id/productStateIcon"
         app:layout_constraintTop_toTopOf="@+id/productStateIcon"
         tools:text="Product State" />
@@ -110,14 +110,13 @@
         tools:text="--₺" />
 
     <ImageView
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="TODO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/marketNameText"
-        app:srcCompat="@drawable/ic_right" />
+        android:id="@+id/productDetailIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/productStateText"
+        app:layout_constraintEnd_toEndOf="@+id/productPriceText"
+        app:layout_constraintTop_toTopOf="@+id/productStateText"
+        app:srcCompat="@drawable/ic_down" />
 
     <Space
         android:id="@+id/space"

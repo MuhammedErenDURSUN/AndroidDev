@@ -2,9 +2,7 @@ package com.med.androiddev.orders
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +11,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.med.androiddev.R
-import com.med.domain.orders.model.Order
+import com.med.domain.network.orders.model.Order
 import java.text.SimpleDateFormat
 
 
@@ -32,10 +30,10 @@ class OrdersAdapter(private val context: Context, private val orders: List<Order
         val orderDetail: TextView = view.findViewById(R.id.orderDetail)
         val summaryPrice: TextView = view.findViewById(R.id.summaryPrice)
         val productStateIcon: ImageView = view.findViewById(R.id.productStateIcon)
+        val productDetailIcon: ImageView = view.findViewById(R.id.productDetailIcon)
         val productDetail: ConstraintLayout = view.findViewById(R.id.productDetail)
 
         // Siparis detayinin goruntulenme durumunu tutan degiskene renkleri atama.
-
         init {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 colorMap["Yolda"] = context.getColor(R.color.siparisYolda)
@@ -62,23 +60,20 @@ class OrdersAdapter(private val context: Context, private val orders: List<Order
     override fun onBindViewHolder(holder: OrdersViewHolder, position: Int) {
 
         // Siparis detayinin goruntulenme durumunu varsayılan olarak false atar.
-
         if (expandMap[position] == null) expandMap[position] = false
 
         // Siparis öğesine tıklanma durumunda tetiklenir.
-
         holder.itemView.setOnClickListener {
 
             // Siparis detayinin goruntulenme durumunu tersine cevirir.
-
             expandMap[position]?.let { em ->
                 expandMap[position] = !em
                 holder.productDetail.visibility = if (!em) View.VISIBLE else View.GONE
+                holder.productDetailIcon.rotation = if (expandMap[position]!!) 180f else 0f
             }
         }
 
         // Siparis öğesinin bilgileri doldurulur.
-
         val order = orders[position]
 
         order.let {
@@ -100,13 +95,13 @@ class OrdersAdapter(private val context: Context, private val orders: List<Order
             }
 
             holder.productDetail.visibility = if (expandMap[position]!!) View.VISIBLE else View.GONE
+            holder.productDetailIcon.rotation = if (expandMap[position]!!) 180f else 0f
 
         }
 
     }
 
     // Ay isimlerini geri dondurur.
-
     @SuppressLint("SimpleDateFormat")
     fun toMonthString(date: String): String {
         val parser = SimpleDateFormat("MM")
@@ -119,11 +114,9 @@ class OrdersAdapter(private val context: Context, private val orders: List<Order
     companion object {
 
         // Siparis durumunun renklerini tutan degisken.
-
         private val colorMap = HashMap<String, Int>()
 
         // Siparis detayinin goruntulenme durumunu tutan degisken.
-
         private val expandMap = HashMap<Int, Boolean>()
     }
 }

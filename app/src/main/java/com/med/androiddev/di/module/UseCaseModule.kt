@@ -1,7 +1,11 @@
 package com.med.androiddev.di.module
 
 import com.med.data.network.orders.repository.OrdersRepository
-import com.med.domain.orders.OrderListUseCase
+import com.med.data.preferences.login.repository.PreferenceRepository
+import com.med.domain.network.orders.OrderListUseCase
+import com.med.domain.preferences.login.ClearPreferenceUseCase
+import com.med.domain.preferences.login.EditPreferenceUseCase
+import com.med.domain.preferences.login.GetPreferenceUseCase
 import dagger.Module
 import dagger.Provides
 import io.reactivex.Scheduler
@@ -31,4 +35,30 @@ class UseCaseModule {
     ): OrderListUseCase =
         OrderListUseCase(ordersRepository, ioScheduler, mainThreadScheduler)
 
+    @Provides
+    @Singleton
+    internal fun provideGetPreferenceUseCase(
+        preferenceRepository: PreferenceRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named(
+            "mainThreadScheduler"
+        ) mainThreadScheduler: Scheduler
+    ): GetPreferenceUseCase =
+        GetPreferenceUseCase(preferenceRepository, ioScheduler, mainThreadScheduler)
+
+    @Provides
+    @Singleton
+    internal fun provideEditPreferenceUseCase(
+        preferenceRepository: PreferenceRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named(
+            "mainThreadScheduler"
+        ) mainThreadScheduler: Scheduler
+    ): EditPreferenceUseCase =
+        EditPreferenceUseCase(preferenceRepository, ioScheduler, mainThreadScheduler)
+
+    @Provides
+    @Singleton
+    internal fun provideClearPreferenceUseCase(
+        preferenceRepository: PreferenceRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named(
+            "mainThreadScheduler"
+        ) mainThreadScheduler: Scheduler
+    ): ClearPreferenceUseCase =
+        ClearPreferenceUseCase(preferenceRepository, ioScheduler, mainThreadScheduler)
 }

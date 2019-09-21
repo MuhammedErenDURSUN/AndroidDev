@@ -7,7 +7,10 @@ import com.med.androiddev.di.module.IOModule
 import com.med.androiddev.di.module.RepositoryModule
 import com.med.androiddev.di.module.UseCaseModule
 import com.med.data.network.Endpoint
-import com.med.domain.orders.OrderListUseCase
+import com.med.domain.network.orders.OrderListUseCase
+import com.med.domain.preferences.login.ClearPreferenceUseCase
+import com.med.domain.preferences.login.EditPreferenceUseCase
+import com.med.domain.preferences.login.GetPreferenceUseCase
 import dagger.Component
 import javax.inject.Singleton
 
@@ -18,4 +21,7 @@ interface AppComponent {
     fun getApplicationContext(): Context
     fun getEndpoint(): Endpoint
     fun orderListUseCase(): OrderListUseCase
+    fun getPreferenceUseCase(): GetPreferenceUseCase
+    fun editPreferenceUseCase(): EditPreferenceUseCase
+    fun clearPreferenceUseCase(): ClearPreferenceUseCase
 }

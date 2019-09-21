@@ -1,4 +1,4 @@
-package com.med.domain.orders.model
+package com.med.domain.network.orders.model
 
 // Siparis Veri Transfer Modeli
 

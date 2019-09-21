@@ -2,7 +2,7 @@ package com.med.androiddev.orders.di.module
 
 import com.med.androiddev.di.scope.PerActivity
 import com.med.androiddev.orders.OrdersPresenter
-import com.med.domain.orders.OrderListUseCase
+import com.med.domain.network.orders.OrderListUseCase
 import dagger.Module
 import dagger.Provides
 

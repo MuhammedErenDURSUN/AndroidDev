@@ -32,4 +32,10 @@ abstract class BaseFragment<P : BasePresenter<Any>> : Fragment() {
         presenter.attachView(this)
         presenter.initialise()
     }
+
+    override fun onDetach() {
+        presenter.disposeSubscriptions()
+        presenter.detachView()
+        super.onDetach()
+    }
 }

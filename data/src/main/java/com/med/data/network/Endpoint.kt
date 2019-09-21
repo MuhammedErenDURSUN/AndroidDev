@@ -6,8 +6,7 @@ import retrofit2.http.GET
 
 interface Endpoint {
 
-    // Retrofit Get isteğininin atılacağı url ve Json verisini, sipariş modelini liste olarak döndürür.
-
+    // Retrofit Get isteğininin atılacağı url ve Json verisini, sipariş listesi halinde döndürür.
     @GET("/")
     fun getOrderList(): Single<List<Order>>
 }

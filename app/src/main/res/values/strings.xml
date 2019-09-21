@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">MARKETİM</string>
+
+    <!-- Orders UI text -->
+    <string name="login_button">Giriş</string>
+    <string name="logout_button">Çıkış Yap</string>
+    <string name="orders_button">Siparişlerim</string>
+
+    <!-- Login UI text -->
+    <string name="user_name">Kullanıcı Adı</string>
+    <string name="user_password">Şifre</string>
+    <string name="remember_me">Beni Hatırla</string>
+
+    <!-- Alert Message -->
+    <string name="empty_message">Kullanıcı adı veya Şifre boş olamaz.</string>
+    <string name="incorrect_message">Kullanıcı adı veya şifre hatalı.</string>
+    <string name="logout_message">Çıkış yapmak istediğinize emin misiniz?</string>
+
+
+    <!-- Alert Button text -->
+    <string name="alert_yes">Evet</string>
+    <string name="alert_ok">Tamam</string>
+    <string name="alert_no">Hayır</string>
+    <string name="alert_cancel">Çıkış</string>
+
+
+
 </resources>
