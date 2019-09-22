@@ -15,7 +15,7 @@
     <string name="empty_message">Kullanıcı adı veya Şifre alanları boş olamaz.</string>
     <string name="incorrect_message">Kullanıcı adı veya Şifre hatalı.</string>
     <string name="logout_message">Çıkış yapmak istediğinize emin misiniz?</string>
-    <string name="autologin_message">Kullanıcı bilgileriniz doğrulanamadı. Giriş Ekranına yölendiriliyorsunuz.</string>
+    <string name="autologin_message">Kullanıcı bilgileriniz doğrulanamadı. Giriş Ekranına yönlendiriliyorsunuz.</string>
     <string name="error_message">Uygulamada bir hata tespit ettik. Tekrar Deneyin.</string>
 
 
