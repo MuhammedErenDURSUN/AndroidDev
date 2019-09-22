@@ -13,21 +13,21 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme" >
 
-        <activity android:name=".splash.SplashActivity">
+        <activity android:name=".splash.SplashActivity"  android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.activity.LoginActivity">
+        <activity android:name=".login.activity.LoginActivity"  android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.LOGIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".main.MainActivity"  android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />

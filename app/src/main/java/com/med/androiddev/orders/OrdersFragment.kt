@@ -1,5 +1,6 @@
 package com.med.androiddev.orders
 
+import android.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.med.androiddev.App
 import com.med.androiddev.R
@@ -43,6 +44,16 @@ class OrdersFragment : BaseFragment<OrdersPresenter>(), OrdersView {
 
         ordersRecyclerView.apply {
             adapter = OrdersAdapter(context, orders)
+        }
+    }
+
+    override fun showAlert(messageId: Int) {
+        AlertDialog.Builder(context).let {
+            it.setTitle(getString(R.string.app_name))
+            it.setMessage(getString(messageId))
+            it.setPositiveButton(getString(R.string.alert_ok)) { _, _ -> presenter.getOrderList() }
+            it.show()
+
         }
     }
 

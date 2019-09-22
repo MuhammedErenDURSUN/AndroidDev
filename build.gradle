@@ -27,7 +27,7 @@ allprojects {
         rxjava2_version = "2.2.7"
         rxandroid_version = "2.1.1"
         dagger2_vesion = "2.21"
-        okhttp3_version = "3.14.1"
+        okhttp3_version = "3.12.0"
     }
 }
 

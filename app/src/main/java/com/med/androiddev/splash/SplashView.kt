@@ -11,4 +11,7 @@ interface SplashView {
 
     // Present tarafından auto login aktif ise tetiklenir.
     fun openMainActivity()
+
+    // Kullaniciya uyari gosterilmesi durumunda tetiklenir.
+    fun showAlert(messageId: Int)
 }

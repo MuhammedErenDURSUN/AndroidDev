@@ -13,7 +13,7 @@ class GetUserObserver(private val presenter: SplashPresenter) : DisposableObserv
     override fun onNext(t: UserDto) {
 
         // Present tarafina kullanici bilgileri gonderilir.
-        presenter.autoLoginControl(t)
+        presenter.autoLoginControl(t,state=true)
     }
 
     // Kullanici bilgilerinin getirilmesi isteği basarisiz ise tetiklenir.

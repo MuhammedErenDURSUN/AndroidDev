@@ -15,7 +15,7 @@ class OrderListUseCase @Inject constructor(
     postExecutionScheduler: Scheduler
 ) : SingleUseCase<List<Order>, Unit>(subscribeScheduler, postExecutionScheduler) {
 
-    // Data katmanından Siparişlerin listesini getirir, Siparis Veri Transfer Modelini oluşturur ve listesini döndürür.
+    // Siparişlerin listesini getirir, Siparis Veri Transfer Modelini oluşturur ve listesini döndürür.
     override fun buildUseCaseSingle(params: Unit?): Single<List<Order>> {
         return ordersRepository.getOrderList().map {
             it.map { od ->

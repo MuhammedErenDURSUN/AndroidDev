@@ -1,5 +1,6 @@
 package com.med.androiddev.splash
 
+import android.app.AlertDialog
 import android.content.Intent
 import com.med.androiddev.App
 import com.med.androiddev.R
@@ -38,6 +39,16 @@ class SplashActivity : BaseActivity<SplashPresenter>(), SplashView {
         Intent(this, MainActivity::class.java).apply {
             startActivity(this)
             finish()
+        }
+    }
+
+    override fun showAlert(messageId: Int) {
+        AlertDialog.Builder(this).let {
+            it.setTitle(getString(R.string.app_name))
+            it.setMessage(getString(messageId))
+            it.setPositiveButton(getString(R.string.alert_ok)) { _, _ -> presenter.clearUserData() }
+            it.show()
+
         }
     }
 

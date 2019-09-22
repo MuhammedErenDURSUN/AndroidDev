@@ -1,7 +1,6 @@
 package com.med.domain.network.orders.model
 
 // Siparis Veri Transfer Modeli
-
 data class Order(
     val date: String?,
     val marketName: String?,
@@ -13,7 +12,6 @@ data class Order(
 )
 
 // Ürün Detayı Veri Transfer Modeli
-
 data class ProductDetail(
     val orderDetail: String?,
     val summaryPrice: Double?

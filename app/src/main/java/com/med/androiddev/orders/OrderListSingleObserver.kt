@@ -16,6 +16,7 @@ class OrderListSingleObserver(private val presenter: OrdersPresenter) :
 
     // Siparişler isteği başarısız ise tetiklenir.
     override fun onError(e: Throwable) {
+        presenter.errorMessage()
         e.printStackTrace()
     }
 }

@@ -12,4 +12,7 @@ interface OrdersView {
 
     // Siparişler isteğinden yanit beklenirken tetiklenir.
     fun showProgressBar(visibility: Int)
+
+    // Kullaniciya uyari gosterilmesi durumunda tetiklenir.
+    fun showAlert(messageId: Int)
 }
